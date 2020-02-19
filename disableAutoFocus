@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -e /dev/video0 ]; then
+	v4l2-ctl -d /dev/video0 --set-ctrl=focus_auto=0
+	v4l2-ctl -d /dev/video0 --set-fmt-video=width=160,height=120,pixelformat=MJPG
+else
+	echo "VideoCapture device is not connected"
+
+fi
