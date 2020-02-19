@@ -1,0 +1,8 @@
+Command for reading from serialport and outputting to a file - the file is called p1
+
+    grep --line-buffered \$GPGLL* /dev/ttyAMA0 > p1
+
+Command for extracting the last 4 lines from the file p1 and inserting into a new file - new file is called p1res
+Remember to rename p1res when moving to new point - ie. p2res, p3res...
+
+    less /home/pro/gpstest/p1 | tail -n 4 | tee p1res
